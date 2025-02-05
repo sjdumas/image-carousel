@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+	--font-family: "Inter", "Helvetica Neue", sans-serif;
+	--background-color: #ffffff;
+	--text-color: #222222;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	line-height: 1.5;
+	font-family: var(--font-family);
+	background-color: var(--background-color);
+	color: var(--text-color);
+}
