@@ -4,6 +4,10 @@
 	--font-family: "Inter", "Helvetica Neue", sans-serif;
 	--background-color: #ffffff;
 	--text-color: #222222;
+	--arrow-bg-color: rgba(0, 0, 0, 0.5);
+	--arrow-text-color: #ffffff;
+	--dot-inactive-color: #bbbbbb;
+	--dot-active-color: #333333;
 }
 
 *,
@@ -14,8 +18,70 @@
 }
 
 body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 	line-height: 1.5;
 	font-family: var(--font-family);
 	background-color: var(--background-color);
 	color: var(--text-color);
+}
+
+.carousel-container {
+	position: relative;
+	width: 80%;
+	max-width: 600px;
+	overflow: hidden;
+}
+
+.carousel-slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slides img {
+	width: 100%;
+	display: block;
+}
+
+.carousel-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--arrow-bg-color);
+	color: var(--arrow-text-color);
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.carousel-arrow.prev {
+	left: 10px;
+}
+
+.carousel-arrow.next {
+	right: 10px;
+}
+
+.carousel-dots {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	background-color: var(--dot-inactive-color);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.dot.active {
+	background-color: var(--dot-active-color);
 }
